@@ -14,8 +14,6 @@ tweet_links <- paste0("https://twitter.com/NELiveTraffic/status/",
                         "1029381970248298497"
                       ))
 
-event_ids <- 1:length(tweet_links)
-
 dates <- c(
   "2018-02-21",
   "2018-05-04",
@@ -57,36 +55,36 @@ end_times <- c(
 )
 
 tweets <- c(
-  paste0(
+  paste(
     "BROKEN DOWN VEHICLE",
     "A184 Felling Bypass westbound after A195 Lingey Lane #Wardley.",
     "A Land Rover is blocking lane 1 awaiting recovery, police on-scene.",
     "Expect heavy congestion.",
     sep = " "),
-  paste0(
+  paste(
     "A690 Durham Road, traffic starting to break up after earlier",
     "congestion between the North Moor Lane roundabout and the junction",
     "with B1405 Springwell Road  in #Sunderland",
     sep = " "),
-  paste0(
+  paste(
     "CONGESTION",
     "B1318 Great North Road northbound through #Gosforth from A189",
     "Blue House to Broadway roundabout is 34 mins.",
     sep = " "),
-  paste0(
+  paste(
     "CONGESTION",
     "A1018 Wearmouth Bridge & North Bridge Street northbound",
     "in #Sunderland this evening.",
     sep = " "),
-  paste0(
+  paste(
     "B1318 Barras Bridge & B1307 Percy Street southbound #Newcastle city",
     "centre into Eldon Square car park. ",
     sep = " "),
-  paste0(
+  paste(
     "B1318 Great North Road, heavy slow moving traffic moving southbound",
     "into #Gosforth with congestion at the A1 - A1056 merge #Newcastle, 4:50pm",
     sep = " "),
-  paste0(
+  paste(
     "Police are attending an overturned vehicle on the A1 WBP southbound ",
     "near junction 66 Angel of The North #Gateshead.",
     "CLEARED",
@@ -99,14 +97,16 @@ tweets <- c(
 
 metadata <-
   tibble(
-    id = event_ids,
     date = lubridate::ymd(dates),
     start_datetime = lubridate::ymd_hm(paste0(dates,start_times)),
     end_datetime = lubridate::ymd_hm(paste0(dates,end_times)),
     event_time = lubridate::hm(event_time),
     tweet = tweets,
     link = tweet_links
-  )
+  ) %>%
+  arrange(date) %>%
+  mutate(id = 1:nrow(.)) %>%
+  select(id, everything())
 
 
 write_csv(metadata, "data-raw/metadata.csv")
