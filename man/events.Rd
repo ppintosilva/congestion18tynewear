@@ -5,18 +5,18 @@
 \alias{events}
 \title{Event data for hand-picked events that affected
 traffic flow in the region of Tyne and Wear in the year 2018.}
-\format{A list of lists, each containing the following event data:
+\format{A list of events, each containing the following data:
 \describe{
-\item{\code{nodes}}{location ids potentially affected by the incident}
-\item{\code{flows_l}}{Tibble containing the number of vehicles passing
+\item{\code{nodes}}{ids of locations potentially affected by the incident}
+\item{\code{flows_l}}{tibble containing the number of vehicles passing
 through each of the locations during each time period}
-\item{\code{flows_od}}{Tibble containing the number, speed statistics
+\item{\code{flows_od}}{tibble containing the number, speed statistics
 and other information of vehicles passing between each pair of locations
 during each time period}
-\item{\code{spatial}}{List of spatial data, simple feature dataframes,
-cropped to the area of interest monitored locations, shortest paths
-between locations, the enclosing arterial and primary road networks
- and nearby amenities}
+\item{\code{spatial}}{spatial data composed of several sf dataframes,
+cropped to the area of interest. Includes data about monitored locations,
+shortest paths between locations, the enclosing arterial
+and primary road networks and nearby amenities}
 \item{\code{network}}{asymptotic flow network computed over the chosen
 spatio-temporal window}
 }}

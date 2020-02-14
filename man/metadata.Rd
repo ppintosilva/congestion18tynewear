@@ -9,8 +9,8 @@ traffic flow in the region of Tyne and Wear in the year 2018:}
 \describe{
 \item{\code{id}}{event id}
 \item{\code{date}}{event date}
-\item{\code{start_datetime}}{event window start time}
-\item{\code{end_datetime}}{event window end time}
+\item{\code{start_datetime}}{traffic flow temporal window start time}
+\item{\code{end_datetime}}{traffic flow temporal window end time}
 \item{\code{event_time}}{when the event was reported on twitter}
 \item{\code{tweet}}{tweet content}
 \item{\code{link}}{url link to the original tweet}
