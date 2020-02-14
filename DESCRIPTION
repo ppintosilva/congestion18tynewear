@@ -12,10 +12,7 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
 Imports: 
-    tibble,
-    anprflows (>= 0.0.0.9000)
-Remotes: 
-    ppintosilva/anprflows
+    tibble
 Suggests: 
     testthat (>= 2.1.0)
 Depends:
