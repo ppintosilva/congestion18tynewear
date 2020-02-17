@@ -22,12 +22,14 @@ traffic flow in the region of Tyne and Wear in the year 2018:
 The main goal of this package is to provide resources to study and profile
 traffic congestion under different urban scenarios, using a type of data
 which is often not readily available to researchers but whose underlying 
-technology is becoming more widespread in developed cities
-(Automatic Number Plate Recognition).
+technology is becoming more widespread to monitor traffic flows
+within cities - **Automatic Number Plate Recognition**.
 
-The data are packaged so that it's ready and easy to work with using the
-[anprflows](https://github.com/ppintosilva/anprflows) package. 
-Refer to vignettes for examples on to visualise and use the data.
+The data are ready to be used with the
+[anprflows](https://github.com/ppintosilva/anprflows) package
+(which was also used to crop it).
+Refer to its vignettes for examples on how to do visualise and 
+manipulate the data.
 
 ## A note on traffic flow data
 
