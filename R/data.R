@@ -40,6 +40,10 @@ NULL
 #' and primary road networks and nearby amenities}
 #' \item{\code{network}}{asymptotic flow network computed over the chosen
 #' spatio-temporal window}
+#' \item{\code{hparams}}{values of the hyperparameters used to identify spurious
+#' flows and crop spatial features}
+#' \item{\code{incident}}{approximate point where incident or congestion was
+#' reported by traffic authorities}
 #' }
 #'
 "events"
